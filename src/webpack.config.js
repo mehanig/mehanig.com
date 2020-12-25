@@ -152,6 +152,11 @@ module.exports = {
                     to: "static/libs/",
                     context: "src/static/libs/"
                 },
+                {
+                    from: "*.*",
+                    to: "static/images/",
+                    context: "src/static/images/"
+                },
             ],
         }),
     ],
