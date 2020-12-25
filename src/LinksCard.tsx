@@ -109,7 +109,7 @@ const LinksCard = (props: {nameAndAboutRef: React.RefCallback<HTMLElement> | nul
                 setTop(newTopValue);
             }
 
-            const newFontSizeValue = Math.round((props.viewHeight - top - 40) / 12);
+            const newFontSizeValue = Math.round((props.viewHeight - top - 60) / 12);
             if (fontSize != newFontSizeValue) {
                 setFontSize(newFontSizeValue);
             }
