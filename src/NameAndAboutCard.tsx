@@ -77,8 +77,6 @@ const NameAndAboutCard = (props: {viewWidth: number, viewHeight: number}) => {
 
 
     React.useEffect(() => {
-        // Draw blotter effects, raw js
-        // BLOTTER - Example 1
         const text = new (window as any).Blotter.Text("MEHANIG:", {
             family : "'Montserrat', sans-serif",
             size : fontSize,
