@@ -37,3 +37,13 @@ jobs:
           azcliversion: 2.0.72
           inlineScript: |
               az storage blob upload-batch --account-name mehanigcomfrontpage -d '$web' -s ./dist
+    - name: Azure CLI script
+      uses: azure/CLI@v1
+      with:
+          azcliversion: 2.0.72
+          inlineScript: |
+            az cdn endpoint purge --content-paths  "/*" --profile-name "mehanigcomfrontpagecdnstatic" --name "mehanig" --resource-group "mehanig.com"
+            # Azure logout 
+    - name: logout
+      run: |
+            az logout
