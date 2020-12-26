@@ -110,6 +110,7 @@ const NameAndAboutCard = (props: {viewWidth: number, viewHeight: number}) => {
                     cursor: "pointer",
                     width: "fit-content",
                     marginBottom: -45,
+                    height: fontSize  * 1.9,
                     fontSize,
                 }}>MEHANIG:
                 </div>
