@@ -53,21 +53,6 @@ module.exports = {
                     },
                 ],
             },
-            // Compile .tsx?
-            // {
-            //     test: /\.(ts|tsx)$/,
-            //     use: [
-            //         {
-            //             loader: require.resolve(
-            //                 "awesome-typescript-loader"
-            //             ),
-            //             options: {
-            //                 transpileOnly: true,
-            //             },
-            //         },
-            //     ],
-            // },
-            // Compile .tsx?
             {
                 test: /\.(ts|tsx)$/,
                 exclude: /node_modules/,
@@ -75,13 +60,6 @@ module.exports = {
                     {
                         loader: require.resolve("babel-loader"),
                         options: { babelrc: true },
-                        //             loader: require.resolve('ts-loader'),
-                        //             options: {
-                        //                 configFile: paths.appTsProdConfig,
-                        //                 transpileOnly: true,
-                        //                 projectReferences: true,
-                        //                 experimentalWatchApi: true,
-                        //             },
                     },
                 ],
             },
