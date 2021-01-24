@@ -48,7 +48,7 @@ jobs:
       # uses: wei/curl@61d92b5169ea0425820dd13cf6fbad66b483e9f1
       uses: wei/curl@v1.1.1
       with:
-        args: -X POST https://api.cloudflare.com/client/v4/zones/cfd7a75d18978e0f7744d0935f3b6ff7/purge_cache/ -H 'Authorization: Bearer ${{ secrets.CLOUDFLARE_API_PURGE_CACHE_TOKEN }}' -H 'Content-Type: application/json' -H 'cache-control: no-cache' -d '{"purge_everything":true}'
+        args: -X POST https://api.cloudflare.com/client/v4/zones/cfd7a75d18978e0f7744d0935f3b6ff7/purge_cache/ -H 'Authorization:\ Bearer ${{ secrets.CLOUDFLARE_API_PURGE_CACHE_TOKEN }}' -H 'Content-Type:\ application/json' -H 'cache-control:\ no-cache' -d '{"purge_everything":true}'
     
     - name: logout
       run: |
