@@ -30,25 +30,29 @@ const NameAndAboutCardWrapper = styled.div({
     width: "fit-content"
 })
 
-const BackgroundWrapper = styled.div({
-    position: "fixed",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    width: "100vw",
-    height: "100vh",
+// Main container - flexbox, no fixed/absolute
+const MainContainer = styled.div({
+    display: "flex",
+    flexDirection: "column",
+    minHeight: "100vh",
+    width: "100%",
+    position: "relative",
     backgroundColor: "#263ffd",
 })
 
-const ContentWrapper = styled.div({
+// Background layer - no fixed positioning
+const BackgroundWrapper = styled.div({
     position: "absolute",
-    top: 0,
-    left: 0,
-    width: "100%",
-    height: "100%",
-    paddingBottom: "env(safe-area-inset-bottom, 0px)",
-    overflow: "hidden",
+    inset: 0,
+    zIndex: 0,
+})
+
+const ContentWrapper = styled.div({
+    position: "relative",
+    zIndex: 1,
+    flex: 1,
+    display: "flex",
+    flexDirection: "column",
 })
 
 const App = () => {
@@ -118,7 +122,7 @@ const App = () => {
 
 
     return (
-        <>
+        <MainContainer>
             <BackgroundWrapper>
                 {shaderReady && webGLSupported && (
                     <Warp
@@ -161,7 +165,7 @@ const App = () => {
                     </Switch>
                 </Router>
             </ContentWrapper>
-        </>
+        </MainContainer>
     );
 }
 
