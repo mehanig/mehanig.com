@@ -19,6 +19,10 @@ const LinkBlock =  styled.a<{fontSize: number, marginLeft?: string}>(props => {
         width: "fit-content",
         cursor: "pointer",
         fontSize: props.fontSize,
+        backgroundColor: "rgba(38, 63, 253, 0.85)",
+        padding: "4px 12px",
+        marginBottom: "4px",
+        display: "inline-block",
         ":hover": {
             color: "#ff1717"
         }

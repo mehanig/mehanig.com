@@ -14,33 +14,27 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [14.x]
-
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
+    - uses: actions/checkout@v4
+    - name: Use Node.js 22.x
+      uses: actions/setup-node@v4
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 22.x
     - run: npm install -g yarn
     - run: yarn
     - run: yarn build
     - name: Azure Login
-      uses: azure/login@v1
+      uses: azure/login@v2
       with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}    
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Azure CLI script
-      uses: azure/CLI@v1
+      uses: azure/CLI@v2
       with:
-          azcliversion: 2.0.72
           inlineScript: |
               az storage blob upload-batch --account-name mehanigcomfrontpage -d '$web' -s ./dist
     - name: Azure CLI script
-      uses: azure/CLI@v1
+      uses: azure/CLI@v2
       with:
-          azcliversion: 2.0.72
           inlineScript: |
             az cdn endpoint purge --content-paths  "/*" --profile-name "mehanigcomfrontpagecdnstatic" --name "mehanig" --resource-group "mehanig.com" 
     - name: Github Action for curl

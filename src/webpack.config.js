@@ -64,6 +64,25 @@ module.exports = {
                 ],
             },
             {
+                test: /\.js$/,
+                include: /node_modules\/@paper-design/,
+                resolve: {
+                    fullySpecified: false,
+                },
+                use: [
+                    {
+                        loader: require.resolve("babel-loader"),
+                        options: {
+                            presets: ["@babel/preset-env"],
+                            plugins: [
+                                "@babel/plugin-proposal-class-properties",
+                                ["@babel/plugin-transform-runtime", { regenerator: true }],
+                            ],
+                        },
+                    },
+                ],
+            },
+            {
                 test: /\.(css|scss)$/,
                 use: [
                     { loader: "style-loader" }, // creates style nodes from JS strings
