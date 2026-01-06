@@ -1,9 +1,13 @@
-html, body {
+html {
+    background-color: #000000;
+}
+
+body {
     margin: 0;
     padding: 0;
     width: 100%;
     min-height: 100%;
-    /* background-color: #263ffd; */
+    background-color: 'transparent';
     font-family: 'Montserrat', sans-serif;
 }
 

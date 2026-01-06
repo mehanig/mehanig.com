@@ -30,14 +30,16 @@ const NameAndAboutCardWrapper = styled.div({
     width: "fit-content"
 })
 
-// Main container - flexbox, no fixed/absolute
+// Main container - extra padding to hide Safari borders when scrolled
 const MainContainer = styled.div({
     display: "flex",
     flexDirection: "column",
-    minHeight: "100vh",
+    minHeight: "calc(100vh + 200px)",
     width: "100%",
     position: "relative",
     backgroundColor: "#263ffd",
+    paddingTop: "75px",
+    paddingBottom: "125px",
 })
 
 // Background layer - no fixed positioning
@@ -68,6 +70,11 @@ const App = () => {
         }
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    // Scroll to center on load to hide Safari iOS 26 borders
+    React.useEffect(() => {
+        window.scrollTo(0, 75);
     }, []);
 
     React.useEffect(() => {
