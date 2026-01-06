@@ -1,43 +1,82 @@
 import * as React from "react";
 import styled from "styled-components";
 
+const MIN_FONT_SIZE = 14;
+const MAX_FONT_SIZE = 48;
+
+function clampFontSize(size: number): number {
+    return Math.max(MIN_FONT_SIZE, Math.min(MAX_FONT_SIZE, Math.round(size)));
+}
+
 const MainText = styled.div({
-    color: "#f3cdc7"
+    color: "#f3cdc7",
+    padding: "24px",
+    maxWidth: "100%",
+    maxHeight: "100%",
+    overflow: "hidden",
+    boxSizing: "border-box",
 })
 
+const TextLine = styled.div<{fontSize: number}>(props => ({
+    fontSize: props.fontSize,
+    lineHeight: 1.3,
+    marginBottom: "4px",
+    wordWrap: "break-word",
+}))
+
+// Apple Liquid Glass styled link
+const StyledLink = styled.a<{fontSize: number}>(props => ({
+    fontSize: props.fontSize,
+    color: "#efd64f",
+    textDecoration: "none",
+    backgroundColor: "rgba(38, 63, 253, 0.65)",
+    backdropFilter: "blur(12px) saturate(180%)",
+    WebkitBackdropFilter: "blur(12px) saturate(180%)",
+    padding: "4px 12px",
+    transition: "all 0.2s ease",
+    ":hover": {
+        color: "#ff1717",
+        backgroundColor: "rgba(38, 63, 253, 0.8)",
+    }
+}))
+
+const BackLink = styled.a<{fontSize: number}>(props => ({
+    fontSize: props.fontSize,
+    color: "#f3cdc7",
+    textDecoration: "none",
+    backgroundColor: "rgba(38, 63, 253, 0.65)",
+    backdropFilter: "blur(12px) saturate(180%)",
+    WebkitBackdropFilter: "blur(12px) saturate(180%)",
+    padding: "6px 14px",
+    display: "inline-block",
+    marginTop: "16px",
+    transition: "all 0.2s ease",
+    ":hover": {
+        color: "#ff1717",
+        transform: "translateX(-4px)",
+    }
+}))
+
 const AboutCard = (props: {viewWidth: number, viewHeight: number}) => {
-    const [fontSize, setFontSize] = React.useState(45);
-    const [opacity, setOpacity] = React.useState(0);
-    const [readyToRender, setReadyToRender] = React.useState(false);
-
-    // This triggers re-calc of optimal font size
-    React.useEffect(() => {
-        setReadyToRender(false);
-    }, [props.viewHeight, props.viewWidth])
-
-
-    const onRefChange = React.useCallback(node => {
-        if (node) {
-            if (!readyToRender && props.viewHeight > Math.round((node).getBoundingClientRect().bottom)) {
-                setFontSize(fontSize + 5);
-            } else {
-                if (!readyToRender) {
-                    setFontSize(fontSize - 5);
-                    setReadyToRender(true);
-                    setOpacity(1);
-                }
-            }
-        }
-    }, [fontSize, opacity, readyToRender, props.viewHeight]);
+    // Calculate font size based on available space (5 lines of content)
+    const fontSize = clampFontSize(
+        Math.min(
+            props.viewWidth / 30,
+            (props.viewHeight - 80) / 8
+        )
+    );
 
     return (
-        <MainText ref={onRefChange}>
-            <div style={{fontSize, opacity}}>// About:</div>
-            <div style={{fontSize, opacity}}>// I am a Software Developer at Microsoft;</div>
-            <div style={{fontSize, opacity}}>// I also write plugins for AfterEffects
-                and other fun stuff at free time — <a style={{fontSize, opacity}} href={"https://extrabite.io"}>ExtraBite.io;</a></div>
-            <div style={{fontSize, opacity}}>// Based in Oslo 🇳🇴</div>
-            <div><a style={{fontSize, opacity}} href={"/"}>{"<< Back "}</a></div>
+        <MainText>
+            <TextLine fontSize={fontSize}>// About:</TextLine>
+            <TextLine fontSize={fontSize}>// I am a Software Developer at Microsoft;</TextLine>
+            <TextLine fontSize={fontSize}>
+                // I also write plugins for AfterEffects and other fun stuff at free time — <StyledLink fontSize={fontSize} href={"https://extrabite.io"}>ExtraBite.io;</StyledLink>
+            </TextLine>
+            <TextLine fontSize={fontSize}>// Based in Oslo</TextLine>
+            <div>
+                <BackLink fontSize={fontSize} href={"/"}>{"<< Back"}</BackLink>
+            </div>
         </MainText>
     );
 }
