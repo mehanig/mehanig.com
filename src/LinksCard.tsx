@@ -150,7 +150,7 @@ const LinksCard = (props: {nameAndAboutRef: React.RefCallback<HTMLElement> | nul
         <ContentElem left={left} top={top} maxWidth={maxWidth}>
             <TextBlock fontSize={fontSize}>[</TextBlock>
             <LinkBlock fontSize={fontSize} marginLeft={marginLeft} href={"https://github.com/mehanig"}>GitHub,</LinkBlock>
-            <LinkBlock fontSize={fontSize} marginLeft={marginLeft} href={"https://medium.com/@mehanig"}>Blog,</LinkBlock>
+            <LinkBlock fontSize={fontSize} marginLeft={marginLeft} href={"https://x.com/MehaniG"}>X/Twitter,</LinkBlock>
             <LinkBlock fontSize={fontSize} marginLeft={marginLeft} href={"https://extrabite.io/"}>ExtraBite.io</LinkBlock>
             <LinkBlock fontSize={fontSize} marginLeft={marginLeft} href={"https://instagram.com/mehanig"}>Instagram,</LinkBlock>
             <LinkBlock fontSize={fontSize} marginLeft={marginLeft} href={"https://www.facebook.com/mehanig"}>Facebook,</LinkBlock>
