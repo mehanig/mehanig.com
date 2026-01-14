@@ -153,7 +153,6 @@ const LinksCard = (props: {nameAndAboutRef: React.RefCallback<HTMLElement> | nul
             <LinkBlock fontSize={fontSize} marginLeft={marginLeft} href={"https://x.com/MehaniG"}>X/Twitter,</LinkBlock>
             <LinkBlock fontSize={fontSize} marginLeft={marginLeft} href={"https://extrabite.io/"}>ExtraBite.io</LinkBlock>
             <LinkBlock fontSize={fontSize} marginLeft={marginLeft} href={"https://instagram.com/mehanig"}>Instagram,</LinkBlock>
-            <LinkBlock fontSize={fontSize} marginLeft={marginLeft} href={"https://www.facebook.com/mehanig"}>Facebook,</LinkBlock>
             <LinkBlock fontSize={fontSize} marginLeft={marginLeft} href={"https://www.linkedin.com/in/mehanig/"}>LinkedIn,</LinkBlock>
             <TextBlock fontSize={fontSize} marginLeft={marginLeft}>
                 <LinkBlock fontSize={fontSize}>"Photo Archive",</LinkBlock>
