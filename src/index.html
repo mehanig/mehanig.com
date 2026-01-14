@@ -12,17 +12,85 @@
     </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
-    <meta name="theme-color" content="#000000" />
-    <meta property="og:url" content="https://mehanig.com"/>
-    <meta property="og:title" content="Mehanig Homepage"/>
-    <meta property="og:image" content="./static/images/ogImage.png"/>
-    <link rel="icon" href="./static/images/favicon.ico"  type="image/icon type">
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <link rel="preload" href="./static/fonts/Montserrat-Black.ttf" as="font" crossorigin="anonymous" />
+    <meta name="theme-color" content="#263ffd" />
+
+    <!-- Primary Meta Tags -->
+    <title>Mehanig - Software Developer | Microsoft Engineer & Creative Technologist</title>
+    <meta name="title" content="Mehanig - Software Developer | Microsoft Engineer & Creative Technologist" />
+    <meta name="description" content="Personal website of Mehanig, a Software Developer at Microsoft based in Oslo. Creator of AfterEffects plugins at ExtraBite.io. Explore projects, connect on social media." />
+    <meta name="author" content="Mehanig" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://mehanig.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://mehanig.com/" />
+    <meta property="og:title" content="Mehanig - Software Developer | Microsoft Engineer & Creative Technologist" />
+    <meta property="og:description" content="Personal website of Mehanig, a Software Developer at Microsoft based in Oslo. Creator of AfterEffects plugins at ExtraBite.io." />
+    <meta property="og:image" content="https://mehanig.com/static/images/ogImage.png" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="410" />
+    <meta property="og:site_name" content="Mehanig" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://mehanig.com/" />
+    <meta name="twitter:title" content="Mehanig - Software Developer | Microsoft Engineer & Creative Technologist" />
+    <meta name="twitter:description" content="Personal website of Mehanig, a Software Developer at Microsoft based in Oslo. Creator of AfterEffects plugins at ExtraBite.io." />
+    <meta name="twitter:image" content="https://mehanig.com/static/images/ogImage.png" />
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" href="./static/images/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="./static/images/favicon.ico" />
+    <link rel="apple-touch-icon" href="./static/images/ogImage.png" />
+
+    <!-- Preload & Resources -->
+    <link rel="preload" href="./static/fonts/Montserrat-Black.ttf" as="font" type="font/ttf" crossorigin="anonymous" />
     <script src="./static/libs/blotter.js"></script>
     <script src="./static/libs/lqmaterial.js"></script>
-    <title>Mehanig.com</title>
+
+    <!-- Structured Data - Person Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mehanig",
+        "url": "https://mehanig.com",
+        "jobTitle": "Software Developer",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Microsoft"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Oslo",
+            "addressCountry": "Norway"
+        },
+        "sameAs": [
+            "https://github.com/mehanig",
+            "https://x.com/mehanig",
+            "https://instagram.com/mehanig",
+            "https://linkedin.com/in/mehanig",
+            "https://extrabite.io"
+        ]
+    }
+    </script>
+
+    <!-- Structured Data - WebSite Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Mehanig",
+        "url": "https://mehanig.com",
+        "description": "Personal website of Mehanig, a Software Developer at Microsoft based in Oslo.",
+        "author": {
+            "@type": "Person",
+            "name": "Mehanig"
+        }
+    }
+    </script>
 </head>
 
 <body>

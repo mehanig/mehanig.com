@@ -154,6 +154,16 @@ module.exports = {
                     to: "static/images/",
                     context: "src/static/images/"
                 },
+                {
+                    from: "robots.txt",
+                    to: "./",
+                    context: "src/static/"
+                },
+                {
+                    from: "sitemap.xml",
+                    to: "./",
+                    context: "src/static/"
+                },
             ],
         }),
     ],
